@@ -1,0 +1,59 @@
+﻿Criterios para la segunda entrega de Wordle
+________________
+1. Es acumulativa, es decir a partir de lo realizado en el primer trabajo
+2. La lista de palabras proviene de un archivo
+   * Por defecto, se llamaría (en la configuración), palabras.txt.
+      * O sino lo que el usuario configure
+   * Son palabras separadas por comas
+      * Este archivo NO contiene saltos de línea
+      * Todas las palabras están en una sola línea
+   * De este archivo surje también, aleatoriamente, la palabra objetivo
+   * YO les indico el archivo el día de la sustentación
+      * Más de 500 palabras
+   * Ejemplo del archivo:
+      * papas,peras,aeiou
+3. Se debe comprobar que la palabra del intento del usuario exista
+   * Si no existe, debe mostrar el mensaje: "La palabra no hace parte de la lista. Intenta con otra"
+4. Se debe considerar que cuando existan caracteres repetidos debe indicarse cuándo son realmente parte de la palabra o no
+   * Palabra Objetivo: rocas, Intento: carro
+      * Resultado: c*a*r*r-o*
+5. Debe llevar y mostrar el registro en cada intento.
+   * Es como un “Historial” de los intentos
+   * Palabra Objetivo: rocas, Intento tres: carros, rocos, ricos
+1. c*a*r*r-o*
+2. r+o+c+o-s+
+3. r+i-c+o-s+
+   * El historial debe mostrar el número del intento en el que se puso la palabra correspondiente.
+   * Sea que se gane o que se pierda, debe mostrar el “historial” de intentos.
+   * Adicionalmente, el programa seguirá mostrando el número de intento en el que el usuario está
+   * También mostrará los mismos mensajes cuando el usuario pierda o gane la partida
+6. La longitud de las palabras es variable
+   * Puede ser de 4 o 5 o 6 o 7, etc caracteres
+   * Mínimo 3, máximo 10
+   * Si la palabra del intento no es de X cantidad de caracteres (según lo configurado), se debe mostrar el mensaje correspondiente.
+      * Solo se debe verificar que una palabra de la longitud correcta esté en la lista (puesto que buscarla es un proceso costoso)
+      * Quiere decir que el juego muestra error, tanto si la longitud es incorrecta y además si la palabra no está en la lista (ambas cosas nunca suceden al tiempo).
+      * Por tanto, si el intento es de 5 letras, pero se esperan 6, tu programa solo debe mostrar el error de que la longitud es incorrecta mas no que la palabra no está en la lista de palabras aceptadas.
+7. La cantidad de intentos es variable
+8. Al inicio del programa se lee un archivo de configuración
+   * El programa solicita el nombre del archivo antes de comenzar
+      * ¡SIN EMBARGO! Por defecto, se va a llamar config.txt
+      * Vamos a asumir que lo que el usuario ingrese existe
+      * El mensaje que pide el archivo de configuración debe ser así:
+         * “¿Desea usar otro archivo de configuración? (1 SÍ - 0 NO)”
+         * Si ingresa algo diferente a 0 o 1, debe volver a preguntar
+         * Si ingresó 0, entonces el nombre del archivo es config.txt
+         * Si ingresó 1, el mensaje será el siguiente:
+            * “¿Cómo se llama tu archivo de configuración?”
+               * Por ejemplo, pone: configuracion.txt
+               * Entonces el archivo a leer se llama configuracion.txt
+   * Cada línea del archivo contiene, EN ESTE ORDEN, los valores a utilizar
+1. Cuántas letras (cantidad de caracteres que conforman las palabras para jugar)
+2. Cuántos intentos
+3. El nombre del archivo a usar (de dónde vienen las palabras)
+   * El programa ASUME que la configuración es correcta SIEMPRE.
+
+
+* Todos los archivos que sean leídos por el programa están el a raíz del mismo
+   * Es decir, en la misma carpeta del archivo .py
+   * Los nombres de los archivos contienen la extensión (txt, xml, json, etc)
